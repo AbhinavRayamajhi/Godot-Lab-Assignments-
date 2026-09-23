@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dq46xbm41lakg"]
+
+[ext_resource type="Texture2D" uid="uid://b77g7pjai80gv" path="res://Pictures/seagull.webp" id="1_5sl31"]
+
+[node name="Seagull" type="Sprite2D" unique_id=1333539593]
+scale = Vector2(0.28857142, 0.28857142)
+texture = ExtResource("1_5sl31")
