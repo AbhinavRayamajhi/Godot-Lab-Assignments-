@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://2446d6lqhdmx"]
+
+[ext_resource type="Texture2D" uid="uid://bhh55j4baype7" path="res://Images/background.jpg" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://ct8y80hiwcd4u" path="res://Scenes/superman.tscn" id="1_jjgbg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bo1nx"]
+font_size = 37
+font_color = Color(1, 0.15294118, 0.23137255, 1)
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D" unique_id=658249557]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=202252466]
+position = Vector2(592, 333.5)
+scale = Vector2(1.7619047, 1.7421875)
+texture = ExtResource("1_bo1nx")
+
+[node name="Superman" parent="." unique_id=2094341439 instance=ExtResource("1_jjgbg")]
+position = Vector2(482.99997, 206.99998)
+
+[node name="Label" type="Label" parent="." unique_id=288601342]
+offset_left = 246.0
+offset_top = 600.0
+offset_right = 980.0
+offset_bottom = 651.0
+text = "Use WASD or arrow keys to move around"
+label_settings = SubResource("LabelSettings_bo1nx")

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ct8y80hiwcd4u"]
+
+[ext_resource type="Texture2D" uid="uid://b2s2aya6bb3aq" path="res://Images/superman.png" id="1_l32lb"]
+[ext_resource type="Script" uid="uid://dk62v1pioy6du" path="res://Scripts/superman.gd" id="2_g5h27"]
+
+[node name="Superman" type="Sprite2D" unique_id=2094341439]
+texture_filter = 1
+scale = Vector2(0.52105266, 0.52105266)
+texture = ExtResource("1_l32lb")
+script = ExtResource("2_g5h27")
