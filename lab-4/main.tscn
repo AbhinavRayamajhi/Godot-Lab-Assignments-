@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://c70l3dcopch2s"]
+
+[ext_resource type="Script" uid="uid://dvuce6pdadlfg" path="res://character_body_3d.gd" id="1_ig7tw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_ig7tw"]
+sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
+
+[sub_resource type="Environment" id="Environment_0xm2m"]
+background_mode = 2
+sky = SubResource("Sky_ig7tw")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_khnel"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t1gp5"]
+
+[node name="Node3D" type="Node3D" unique_id=1294166695]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=453747473]
+environment = SubResource("Environment_0xm2m")
+
+[node name="Lights" type="Node3D" parent="." unique_id=1044359126]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights" unique_id=904571842]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.6026667, 0.64, 0.41599998, 1)
+light_energy = 0.059
+shadow_enabled = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights" unique_id=735801008]
+transform = Transform3D(1, 0, 0, 0, -0.0019776933, 0.99999803, 0, -0.99999803, -0.0019776933, -3.522644, 11.217913, 8.096813)
+light_energy = 13.026
+spot_range = 30.048447
+spot_angle = 49.720413
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights" unique_id=538826222]
+transform = Transform3D(0.93937373, 0.00540434, -0.34285253, 0.34277168, 0.012023232, 0.9393417, 0.009198719, -0.99991316, 0.009441852, -17.49402, 11.547261, -15.821178)
+light_energy = 13.026
+spot_range = 40.74525
+spot_angle = 60.49762
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Lights" unique_id=656281666]
+transform = Transform3D(0.8875729, -0.00021206435, 0.4606673, -0.46066737, -0.0004085867, 0.88757277, 0, -0.9999999, -0.00046034157, 9.915542, 10.587879, -2.931633)
+light_energy = 13.026
+spot_range = 28.94566
+spot_angle = 58.894
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=980845829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.351491, 3.1562603)
+script = ExtResource("1_ig7tw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1726937064]
+mesh = SubResource("CapsuleMesh_khnel")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=929214973]
+shape = SubResource("CapsuleShape3D_t1gp5")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=922571897]
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1057156863]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3088074, 0, -3.6819458)
+use_collision = true
+size = Vector3(37.973328, 1, 31.509888)
+
+[node name="Obstacles" type="Node3D" parent="." unique_id=1803013975]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Obstacles" unique_id=394551209]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5071254, 1.0267993, 0)
+use_collision = true
+height = 0.9803467
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Obstacles" unique_id=1145161956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.687438, 1.3576179, -2.1836271)
+use_collision = true
+size = Vector3(1, 1.6933594, 1)
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Obstacles" unique_id=814729184]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0715933, 1.8658172, -4.4481277)
+use_collision = true
+height = 2.7392578
